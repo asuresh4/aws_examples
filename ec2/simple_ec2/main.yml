@@ -57,6 +57,12 @@ Resources:
       Monitoring: true
       SecurityGroupIds:
         - !GetAtt SecurityGroup.GroupId
+      BlockDeviceMappings:
+        -
+          DeviceName: "/dev/xvda"
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
       UserData:
         Fn::Base64: 
           !Sub |
